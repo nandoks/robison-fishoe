@@ -1,0 +1,7 @@
+type Mutation {
+    createSpecies(input: CreateSpeciesInput!): Species!
+    updateSpecies(id: ID!, input: UpdateSpeciesInput!): Species!
+    deleteSpecies(id: ID!): Boolean!
+    createCoordinate(speciesId: ID!, input: CreateCoordinateInput!): Coordinate!
+    deleteCoordinate(id: ID!): Boolean!
+}

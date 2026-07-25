@@ -1,5 +1,7 @@
 type Query {
-    species(search: String, family: String, status: Status): [Species!]!
+    species: [Species!]!
     speciesById(id: ID!): Species
+    coordinates: [Coordinate!]!
     coordinatesBySpecies(speciesId: ID!): [Coordinate!]!
+    coordinateById(id: ID!): Coordinate
 }

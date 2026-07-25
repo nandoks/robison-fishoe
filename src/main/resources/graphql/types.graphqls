@@ -1,11 +1,3 @@
-# Types
-type User {
-    id: ID!
-    username: String!
-    email: String!
-    createdAt: String!
-}
-
 type Species {
     id: ID!
     scientificName: String!
@@ -24,4 +16,5 @@ type Coordinate {
     latitude: Float!
     longitude: Float!
     localityName: String
+    species: Species!
 }

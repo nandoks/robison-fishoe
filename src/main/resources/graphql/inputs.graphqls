@@ -20,7 +20,7 @@ input UpdateSpeciesInput {
     imageUrl: String
 }
 
-input CoordinateInput {
+input CreateCoordinateInput {
     latitude: Float!
     longitude: Float!
     localityName: String

@@ -1,9 +1,11 @@
 package com.br.nandoks.robinson_fishoe.utils.coordinate;
 
+import com.br.nandoks.robinson_fishoe.species.Species;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
@@ -28,6 +30,11 @@ public class CoordinateController {
     @QueryMapping
     public Coordinate coordinateById(@Argument Long id) {
         return coordinateService.findById(id);
+    }
+
+    @SchemaMapping
+    public Species species(Coordinate coordinate) {
+        return coordinate.getSpecies();
     }
 
     @MutationMapping
