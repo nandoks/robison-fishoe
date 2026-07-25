@@ -27,10 +27,10 @@ public class Species {
     private String commonName;
     private String family;
     private String genus;
-    private String distributionNotes;
+    private String distributionNotes; // GEOGRAPHY: Range, depth, habitat type, migration patterns
 
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String description; // BIOLOGY: Morphology, color, size, diet, behavior, reproduction.
 
     @Enumerated(EnumType.STRING)
     private Status status; // DRAFT, PENDING, PUBLISHED
