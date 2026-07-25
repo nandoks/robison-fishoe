@@ -1,0 +1,25 @@
+input CreateSpeciesInput {
+    scientificName: String!
+    commonName: String
+    family: String
+    genus: String
+    distributionNotes: String
+    description: String
+    status: Status!
+}
+
+input UpdateSpeciesInput {
+    scientificName: String
+    commonName: String
+    family: String
+    genus: String
+    distributionNotes: String
+    description: String
+    status: Status
+}
+
+input CoordinateInput {
+    latitude: Float!
+    longitude: Float!
+    localityName: String
+}
