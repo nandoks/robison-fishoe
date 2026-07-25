@@ -1,0 +1,29 @@
+# Types
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    createdAt: String!
+}
+
+type Species {
+    id: ID!
+    scientificName: String!
+    commonName: String
+    family: String
+    genus: String
+    distributionNotes: String
+    description: String
+    status: Status!
+    coordinates: [Coordinate!]!
+    createdBy: User!
+    createdAt: String!
+    updatedAt: String!
+}
+
+type Coordinate {
+    id: ID!
+    latitude: Float!
+    longitude: Float!
+    localityName: String
+}
