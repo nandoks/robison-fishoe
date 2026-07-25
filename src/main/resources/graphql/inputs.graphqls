@@ -6,6 +6,7 @@ input CreateSpeciesInput {
     distributionNotes: String
     description: String
     status: Status!
+    imageUrl: String
 }
 
 input UpdateSpeciesInput {
@@ -16,6 +17,7 @@ input UpdateSpeciesInput {
     distributionNotes: String
     description: String
     status: Status
+    imageUrl: String
 }
 
 input CoordinateInput {

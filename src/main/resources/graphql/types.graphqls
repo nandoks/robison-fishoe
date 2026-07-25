@@ -15,10 +15,8 @@ type Species {
     distributionNotes: String
     description: String
     status: Status!
+    imageUrl: String
     coordinates: [Coordinate!]!
-    createdBy: User!
-    createdAt: String!
-    updatedAt: String!
 }
 
 type Coordinate {

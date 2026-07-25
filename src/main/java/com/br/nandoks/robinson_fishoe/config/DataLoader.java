@@ -1,17 +1,20 @@
 package com.br.nandoks.robinson_fishoe.config;
 
+
 import com.br.nandoks.robinson_fishoe.enums.Status;
 import com.br.nandoks.robinson_fishoe.species.Species;
 import com.br.nandoks.robinson_fishoe.species.SpeciesRepository;
 import com.br.nandoks.robinson_fishoe.utils.coordinate.Coordinate;
 import com.br.nandoks.robinson_fishoe.utils.coordinate.CoordinateRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class DataLoader implements CommandLineRunner {
 
     @Autowired
@@ -23,13 +26,13 @@ public class DataLoader implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        // ✅ ONLY load if the database is empty
+        // Only load if the database is empty
         if (speciesRepository.count() > 0) {
-            System.out.print("ℹ️ Database already contains data. Skipping fixtures.");
+            System.out.println("ℹ️ Database already contains data. Skipping fixtures.");
             return;
         }
 
-        System.out.print("🔄 Loading fixtures into database...");
+        System.out.println("🔄 Loading fixtures into database...");
 
         // ----- Species 1: Doctorfish -----
         Species species1 = new Species();
@@ -42,6 +45,8 @@ public class DataLoader implements CommandLineRunner {
         species1.setDescription("Body oval and strongly compressed. Adults are olive-brown with numerous wavy blue " +
                 "lines on the head and body.");
         species1.setStatus(Status.PUBLISHED);
+        species1.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Acanthurus_chirurgus" +
+                ".jpg/800px-Acanthurus_chirurgus.jpg");
         speciesRepository.save(species1);
 
         List<Coordinate> coords1 = Arrays.asList(
@@ -62,6 +67,8 @@ public class DataLoader implements CommandLineRunner {
         species2.setDescription("Brightly colored with a blue body, yellow tail, and a distinctive crown-like spot on" +
                 " the forehead.");
         species2.setStatus(Status.PUBLISHED);
+        species2.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Holacanthus_ciliaris" +
+                ".jpg/800px-Holacanthus_ciliaris.jpg");
         speciesRepository.save(species2);
 
         List<Coordinate> coords2 = Arrays.asList(
@@ -81,6 +88,8 @@ public class DataLoader implements CommandLineRunner {
         species3.setDescription("Greenish-brown with a distinctive yellow spot on the upper tail base. Males have a " +
                 "bright green head.");
         species3.setStatus(Status.DRAFT);
+        species3.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Sparisoma_viride" +
+                ".jpg/800px-Sparisoma_viride.jpg");
         speciesRepository.save(species3);
 
         List<Coordinate> coords3 = Arrays.asList(
@@ -98,6 +107,8 @@ public class DataLoader implements CommandLineRunner {
         species4.setDistributionNotes("Caribbean Sea and Gulf of Mexico.");
         species4.setDescription("Small pufferfish with a pointed snout. Brownish body with blue spots and lines.");
         species4.setStatus(Status.PUBLISHED);
+        species4.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Canthigaster_rostrata" +
+                ".jpg/800px-Canthigaster_rostrata.jpg");
         speciesRepository.save(species4);
 
         List<Coordinate> coords4 = Arrays.asList(
@@ -108,7 +119,7 @@ public class DataLoader implements CommandLineRunner {
         );
         coordinateRepository.saveAll(coords4);
 
-        // ----- Species 5: Nassau Grouper -----
+        // ----- Species 5: Nassau Grouper (DRAFT) -----
         Species species5 = new Species();
         species5.setScientificName("Epinephelus striatus");
         species5.setCommonName("Nassau Grouper");
@@ -118,6 +129,8 @@ public class DataLoader implements CommandLineRunner {
         species5.setDescription("Large fish with a robust body. Light brown with darker bars and stripes. Can change " +
                 "color dramatically.");
         species5.setStatus(Status.DRAFT);
+        species5.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Epinephelus_striatus" +
+                ".jpg/800px-Epinephelus_striatus.jpg");
         speciesRepository.save(species5);
 
         List<Coordinate> coords5 = Arrays.asList(
@@ -126,7 +139,11 @@ public class DataLoader implements CommandLineRunner {
         );
         coordinateRepository.saveAll(coords5);
 
-        System.out.print("✅ Fixtures loaded: " + speciesRepository.count() + " species, " + coordinateRepository.count() + " coordinates");
+        System.out.println("✅ Fixtures loaded: " + speciesRepository.count() + " species, " + coordinateRepository.count() + " coordinates");
+        System.out.println("📊 Species loaded:");
+        speciesRepository.findAll().forEach(s ->
+                System.out.println("   - " + s.getScientificName() + " (" + s.getStatus() + ")")
+        );
     }
 
     private Coordinate createCoordinate(Double lat, Double lon, String locality, Species species) {

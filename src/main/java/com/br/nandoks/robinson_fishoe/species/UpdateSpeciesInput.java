@@ -9,6 +9,7 @@ public record UpdateSpeciesInput(
         String genus,
         String distributionNotes,
         String description,
-        Status status
+        Status status,
+        String imageUrl
 ) {
 }

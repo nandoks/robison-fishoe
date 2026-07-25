@@ -29,6 +29,7 @@ public class SpeciesService {
         species.setDistributionNotes(input.distributionNotes());
         species.setDescription(input.description());
         species.setStatus(input.status());
+        species.setImageUrl(input.imageUrl());
         return speciesRepository.save(species);
     }
 
@@ -42,6 +43,7 @@ public class SpeciesService {
         if (input.distributionNotes() != null) species.setDistributionNotes(input.distributionNotes());
         if (input.description() != null) species.setDescription(input.description());
         if (input.status() != null) species.setStatus(input.status());
+        if (input.imageUrl() != null) species.setImageUrl(input.imageUrl());
 
         return speciesRepository.save(species);
     }
