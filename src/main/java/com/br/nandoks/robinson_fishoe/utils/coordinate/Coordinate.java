@@ -2,13 +2,16 @@ package com.br.nandoks.robinson_fishoe.utils.coordinate;
 
 import com.br.nandoks.robinson_fishoe.species.Species;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "coordinates")
 public class Coordinate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

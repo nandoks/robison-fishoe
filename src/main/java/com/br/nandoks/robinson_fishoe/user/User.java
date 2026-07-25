@@ -1,17 +1,17 @@
 package com.br.nandoks.robinson_fishoe.user;
 
 import jakarta.persistence.*;
-import lombok.*;
-
-import javax.management.relation.Role;
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +26,10 @@ public class User {
     @Column(nullable = false)
     private String passwordHash; // BCrypt encoded
 
-    @Enumerated(EnumType.STRING)
-    private Role role; // ADMIN, USER
+    public User(String username, String email, String passwordHash) {
+        this.username = username;
+        this.email = email;
+        this.passwordHash = passwordHash;
+    }
 
-    private LocalDateTime createdAt;
 }
