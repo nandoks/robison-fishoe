@@ -1,0 +1,30 @@
+# Ignore build artifacts
+target/
+*.jar
+*.war
+*.ear
+
+# Ignore IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Ignore version control
+.git/
+.gitignore
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore Docker files
+Dockerfile
+.dockerignore
+
+# Ignore Node/JS files (if using frontend in same repo)
+node_modules/
+package-lock.json
+yarn.lock
