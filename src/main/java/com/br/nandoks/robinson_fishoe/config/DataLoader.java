@@ -49,9 +49,9 @@ public class DataLoader implements CommandLineRunner {
         speciesRepository.save(species1);
 
         List<Coordinate> coords1 = Arrays.asList(
-                createCoordinate(18.2208, -66.5901, "Puerto Rico Trench", species1),
-                createCoordinate(18.2315, -66.6103, "Dominican Republic", species1),
-                createCoordinate(18.2450, -66.5850, "Belize Barrier Reef", species1)
+                createCoordinate(18.2208, -66.5901, species1),
+                createCoordinate(18.2315, -66.6103, species1),
+                createCoordinate(18.2450, -66.5850, species1)
         );
         coordinateRepository.saveAll(coords1);
 
@@ -70,9 +70,9 @@ public class DataLoader implements CommandLineRunner {
         speciesRepository.save(species2);
 
         List<Coordinate> coords2 = Arrays.asList(
-                createCoordinate(19.2208, -67.5901, "Florida Keys", species2),
-                createCoordinate(20.2315, -68.6103, "Cuba", species2),
-                createCoordinate(21.2450, -69.5850, "Bahamas", species2)
+                createCoordinate(19.2208, -67.5901,species2),
+                createCoordinate(20.2315, -68.6103, species2),
+                createCoordinate(21.2450, -69.5850,species2)
         );
         coordinateRepository.saveAll(coords2);
 
@@ -90,8 +90,8 @@ public class DataLoader implements CommandLineRunner {
         speciesRepository.save(species3);
 
         List<Coordinate> coords3 = Arrays.asList(
-                createCoordinate(18.2000, -65.5000, "St. Croix, USVI", species3),
-                createCoordinate(18.3000, -64.5000, "British Virgin Islands", species3)
+                createCoordinate(18.2000, -65.5000, species3),
+                createCoordinate(18.3000, -64.5000, species3)
         );
         coordinateRepository.saveAll(coords3);
 
@@ -108,10 +108,10 @@ public class DataLoader implements CommandLineRunner {
         speciesRepository.save(species4);
 
         List<Coordinate> coords4 = Arrays.asList(
-                createCoordinate(19.5000, -70.5000, "Turks and Caicos", species4),
-                createCoordinate(20.0000, -71.5000, "Haiti", species4),
-                createCoordinate(20.5000, -72.5000, "Bahamas", species4),
-                createCoordinate(21.0000, -73.5000, "Miami, Florida", species4)
+                createCoordinate(19.5000, -70.5000, species4),
+                createCoordinate(20.0000, -71.5000, species4),
+                createCoordinate(20.5000, -72.5000, species4),
+                createCoordinate(21.0000, -73.5000, species4)
         );
         coordinateRepository.saveAll(coords4);
 
@@ -129,8 +129,8 @@ public class DataLoader implements CommandLineRunner {
         speciesRepository.save(species5);
 
         List<Coordinate> coords5 = Arrays.asList(
-                createCoordinate(18.2000, -76.0000, "Jamaica", species5),
-                createCoordinate(19.0000, -77.0000, "Cayman Islands", species5)
+                createCoordinate(18.2000, -76.0000, species5),
+                createCoordinate(19.0000, -77.0000, species5)
         );
         coordinateRepository.saveAll(coords5);
 
@@ -141,11 +141,10 @@ public class DataLoader implements CommandLineRunner {
         );
     }
 
-    private Coordinate createCoordinate(Double lat, Double lon, String locality, Species species) {
+    private Coordinate createCoordinate(Double lat, Double lon, Species species) {
         Coordinate coord = new Coordinate();
-        coord.setLatitude(lat);
-        coord.setLongitude(lon);
-        coord.setLocalityName(locality);
+        coord.setLatitude(String.valueOf(lat));
+        coord.setLongitude(String.valueOf(lon));;
         coord.setSpecies(species);
         return coord;
     }

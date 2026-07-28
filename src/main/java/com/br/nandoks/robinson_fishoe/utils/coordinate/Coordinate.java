@@ -17,10 +17,8 @@ public class Coordinate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double latitude;
-    private Double longitude;
-
-    private String localityName; // e.g., "Off the coast of Belize"
+    private String latitude;
+    private String longitude;
 
     // Relation
     @ManyToOne(fetch = FetchType.LAZY)

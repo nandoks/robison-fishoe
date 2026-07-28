@@ -36,9 +36,8 @@ public class CoordinateService {
         Species species = speciesService.findById(speciesId);
 
         Coordinate coordinate = new Coordinate();
-        coordinate.setLatitude(input.latitude());
-        coordinate.setLongitude(input.longitude());
-        coordinate.setLocalityName(input.localityName());
+        coordinate.setLatitude(String.valueOf(input.latitude()));
+        coordinate.setLongitude(String.valueOf(input.longitude()));
         coordinate.setSpecies(species);
 
         return coordinateRepository.save(coordinate);

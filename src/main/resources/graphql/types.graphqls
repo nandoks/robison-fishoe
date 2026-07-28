@@ -15,6 +15,5 @@ type Coordinate {
     id: ID!
     latitude: Float!
     longitude: Float!
-    localityName: String
     species: Species!
 }
