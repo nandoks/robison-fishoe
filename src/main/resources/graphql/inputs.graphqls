@@ -23,5 +23,4 @@ input UpdateSpeciesInput {
 input CreateCoordinateInput {
     latitude: Float!
     longitude: Float!
-    localityName: String
 }
