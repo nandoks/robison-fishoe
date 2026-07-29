@@ -45,7 +45,7 @@ public class DataLoader implements CommandLineRunner {
         species1.setDescription("Body oval and strongly compressed. Adults are olive-brown with numerous wavy blue " +
                 "lines on the head and body.");
         species1.setStatus(Status.PUBLISHED);
-        species1.setImageUrl("https://dummyimage.com/600x400/c0392b/ffffff&text=Acanthurus_chirurgus");
+        species1.setImageUrl("https://dummyimage.com/180x180/c0392b/ffffff&text=Acanthurus_chirurgus");
         speciesRepository.save(species1);
 
         List<Coordinate> coords1 = Arrays.asList(
@@ -66,7 +66,7 @@ public class DataLoader implements CommandLineRunner {
         species2.setDescription("Brightly colored with a blue body, yellow tail, and a distinctive crown-like spot on" +
                 " the forehead.");
         species2.setStatus(Status.PUBLISHED);
-        species2.setImageUrl("https://dummyimage.com/600x400/c0392b/ffffff&text=Holacanthus_ciliaris");
+        species2.setImageUrl("https://dummyimage.com/180x180/c0392b/ffffff&text=Holacanthus_ciliaris");
         speciesRepository.save(species2);
 
         List<Coordinate> coords2 = Arrays.asList(
@@ -86,7 +86,7 @@ public class DataLoader implements CommandLineRunner {
         species3.setDescription("Greenish-brown with a distinctive yellow spot on the upper tail base. Males have a " +
                 "bright green head.");
         species3.setStatus(Status.DRAFT);
-        species3.setImageUrl("https://dummyimage.com/600x400/c0392b/ffffff&text=Sparisoma_viride");
+        species3.setImageUrl("https://dummyimage.com/180x180/c0392b/ffffff&text=Sparisoma_viride");
         speciesRepository.save(species3);
 
         List<Coordinate> coords3 = Arrays.asList(
@@ -104,7 +104,7 @@ public class DataLoader implements CommandLineRunner {
         species4.setDistributionNotes("Caribbean Sea and Gulf of Mexico.");
         species4.setDescription("Small pufferfish with a pointed snout. Brownish body with blue spots and lines.");
         species4.setStatus(Status.PUBLISHED);
-        species4.setImageUrl("https://dummyimage.com/600x400/c0392b/ffffff&text=Canthigaster_rostrata");
+        species4.setImageUrl("https://dummyimage.com/180x180/c0392b/ffffff&text=Canthigaster_rostrata");
         speciesRepository.save(species4);
 
         List<Coordinate> coords4 = Arrays.asList(
@@ -125,7 +125,7 @@ public class DataLoader implements CommandLineRunner {
         species5.setDescription("Large fish with a robust body. Light brown with darker bars and stripes. Can change " +
                 "color dramatically.");
         species5.setStatus(Status.DRAFT);
-        species5.setImageUrl("https://dummyimage.com/600x400/c0392b/ffffff&text=Epinephelus_striatus");
+        species5.setImageUrl("https://dummyimage.com/180x180/c0392b/ffffff&text=Epinephelus_striatus");
         speciesRepository.save(species5);
 
         List<Coordinate> coords5 = Arrays.asList(

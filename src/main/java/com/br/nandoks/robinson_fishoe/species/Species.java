@@ -22,7 +22,6 @@ public class Species {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
     private String scientificName;
 
     private String commonName;

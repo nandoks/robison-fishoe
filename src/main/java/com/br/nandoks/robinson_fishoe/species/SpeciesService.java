@@ -1,5 +1,6 @@
 package com.br.nandoks.robinson_fishoe.species;
 
+import com.br.nandoks.robinson_fishoe.enums.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,7 @@ public class SpeciesService {
     }
 
     public Species createSpecies(CreateSpeciesInput input) {
+        System.out.println(input);
         Species species = new Species();
         species.setScientificName(input.scientificName());
         species.setCommonName(input.commonName());
@@ -28,7 +30,7 @@ public class SpeciesService {
         species.setGenus(input.genus());
         species.setDistributionNotes(input.distributionNotes());
         species.setDescription(input.description());
-        species.setStatus(input.status());
+        species.setStatus(Status.DRAFT);
         species.setImageUrl(input.imageUrl());
         return speciesRepository.save(species);
     }

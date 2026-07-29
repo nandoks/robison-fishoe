@@ -9,7 +9,6 @@ public record CreateSpeciesInput(
         String genus,
         String distributionNotes,
         String description,
-        Status status,
         String imageUrl
 ) {
 }
