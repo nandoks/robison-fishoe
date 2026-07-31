@@ -1,4 +1,4 @@
-package com.br.nandoks.robinson_fishoe.species;
+package com.br.nandoks.robinson_fishoe.species.inputs;
 
 import com.br.nandoks.robinson_fishoe.enums.Status;
 

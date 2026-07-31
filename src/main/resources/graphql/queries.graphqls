@@ -4,4 +4,5 @@ type Query {
     coordinates: [Coordinate!]!
     coordinatesBySpecies(speciesId: ID!): [Coordinate!]!
     coordinateById(id: ID!): Coordinate
+    searchSpecies(textInput: String): [Species!]!
 }

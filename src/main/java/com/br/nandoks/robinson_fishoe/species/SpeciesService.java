@@ -1,6 +1,8 @@
 package com.br.nandoks.robinson_fishoe.species;
 
 import com.br.nandoks.robinson_fishoe.enums.Status;
+import com.br.nandoks.robinson_fishoe.species.inputs.CreateSpeciesInput;
+import com.br.nandoks.robinson_fishoe.species.inputs.UpdateSpeciesInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,4 +56,9 @@ public class SpeciesService {
         Species species = findById(id);
         speciesRepository.delete(species);
     }
+
+    public List<Species> searchSpecies(String textInput) {
+        return speciesRepository.search(textInput);
+    }
+
 }

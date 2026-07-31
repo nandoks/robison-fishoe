@@ -1,5 +1,7 @@
 package com.br.nandoks.robinson_fishoe.species;
 
+import com.br.nandoks.robinson_fishoe.species.inputs.CreateSpeciesInput;
+import com.br.nandoks.robinson_fishoe.species.inputs.UpdateSpeciesInput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -40,5 +42,9 @@ public class SpeciesController {
         return true;
     }
 
+    @QueryMapping
+    public List<Species> searchSpecies(@Argument String textInput) {
+        return speciesService.searchSpecies(textInput);
+    }
 
 }
