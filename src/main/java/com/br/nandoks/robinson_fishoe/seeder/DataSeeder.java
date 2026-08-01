@@ -1,4 +1,4 @@
-package com.br.nandoks.robinson_fishoe.config;
+package com.br.nandoks.robinson_fishoe.seeder;
 
 
 import com.br.nandoks.robinson_fishoe.enums.Status;
@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class DataLoader implements CommandLineRunner {
+public class DataSeeder implements CommandLineRunner {
 
     @Autowired
     private SpeciesRepository speciesRepository;
